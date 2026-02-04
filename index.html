@@ -41,45 +41,81 @@
       </div>
 
       <h1>Hello my darling,  Will you be my Valentine? 💌</h1>
-<!-- Buttons with colors -->
+<!-- Buttons with red background -->
 <div style="text-align:center; margin-top:20px; position:relative; height:60px;">
-  <!-- YES button -->
   <button id="yes" style="background-color:red !important; color:white !important; padding:10px 20px; border:none; border-radius:10px; font-size:18px; cursor:pointer;">
     Yes
   </button>
 
-  <!-- NO button -->
   <button id="no" style="background-color:gray !important; color:black !important; padding:10px 20px; border:none; border-radius:10px; font-size:18px; position:absolute; left:150px; top:0; cursor:pointer;">
-    No?? Yaw ko!
+    Maybe Later
   </button>
 </div>
 
+<!-- Hidden invitations -->
+<div id="invitation" style="text-align:center; margin-top:30px; display:none; opacity:0; transition: opacity 1s;">
+  <p>🎉 Here’s your special Valentine invitation! 🎉</p>
+  <div style="position:relative;">
+    <a href="1.png" target="_blank">
+      <img src="1.png" alt="Invitation 1" style="max-width:300px; margin:10px;">
+    </a>
+    <a href="2.png" target="_blank">
+      <img src="2.png" alt="Invitation 2" style="max-width:300px; margin:10px;">
+    </a>
+  </div>
+  <p>Click the images to open them full-size!</p>
+</div>
 
+<!-- Heart animation -->
+<div id="hearts" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden;"></div>
 
-  // Move NO button randomly on hover
+<script>
+  // YES button: show invitation with fade-in
+  document.getElementById("yes").addEventListener("click", function() {
+    const inv = document.getElementById("invitation");
+    inv.style.display = "block";
+    setTimeout(() => {
+      inv.style.opacity = 1;
+    }, 10); // fade-in
+    startHearts();
+  });
+
+  // NO button: move randomly
   const noButton = document.getElementById("no");
   noButton.addEventListener("mouseenter", function() {
     const x = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
-    const y = Math.floor(Math.random() * 100);
+    const y = Math.floor(Math.random() * 100); // vertical range
     noButton.style.left = x + "px";
     noButton.style.top = y + "px";
   });
-          
-<div id="invitation" style="text-align:center; margin-top:30px; display:none;">
-  <p>🎉 Here’s your special Valentine invitation! 🎉</p>
-  <a href="1.png" target="_blank">
-    <img src="1.png" alt="Invitation 1" style="max-width:300px; margin:10px;">
-  </a>
-  <a href="2.png" target="_blank">
-    <img src="2.png" alt="Invitation 2" style="max-width:300px; margin:10px;">
-  </a>
-  <p>Click the images to open them full-size!</p>
-</div>
-<script>
-  document.getElementById("yes").addEventListener("click", function() {
-    document.getElementById("invitation").style.display = "block";
-  });
+
+  // Hearts animation
+  function startHearts() {
+    const heartsContainer = document.getElementById("hearts");
+    for(let i=0; i<20; i++){
+      const heart = document.createElement("div");
+      heart.innerHTML = "❤️";
+      heart.style.position = "absolute";
+      heart.style.fontSize = Math.random()*30 + 20 + "px";
+      heart.style.left = Math.random()*window.innerWidth + "px";
+      heart.style.top = "-50px";
+      heart.style.opacity = Math.random();
+      heartsContainer.appendChild(heart);
+
+      const fall = () => {
+        let top = parseFloat(heart.style.top);
+        if(top < window.innerHeight){
+          heart.style.top = (top + 2 + Math.random()*2) + "px";
+          requestAnimationFrame(fall);
+        } else {
+          heartsContainer.removeChild(heart);
+        }
+      }
+      fall();
+    }
+  }
 </script>
+
 
 
 
