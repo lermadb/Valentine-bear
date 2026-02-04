@@ -44,22 +44,28 @@
 
       <div class="buttons" id="buttons">
         <button id="yesBtn" class="btn yes">Yes</button>
-        <button id="noBtn" class="btn no">Sure ka?</button>
+        <button id="noBtn" class="btn no">NO?? Try again!</button>
       </div>
 
       <button id="restartBtn" class="btn restart hidden">
         Restart
       </button>
 
-      <p class="hint">Yaw ko… 😈</p>
+      <p class="hint">Better luck next year… 😈</p>
 
     </div>
   </div>
 
   <script src="script.js"></script>
+  <script>
+  document.getElementById("yes").addEventListener("click", function() {
+    document.getElementById("invitation").style.display = "block";
+  });
+</script>
+
 </body>
 </html>
-<div style="text-align:center; margin-top:30px;">
+<div id="invitation" style="text-align:center; margin-top:30px; display:none;">
   <p>🎉 Here’s your special Valentine invitation! 🎉</p>
   <a href="1.png" target="_blank">
     <img src="1.png" alt="Invitation 1" style="max-width:300px; margin:10px;">
