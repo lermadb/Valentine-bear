@@ -73,16 +73,6 @@
 <!-- Heart animation -->
 <div id="hearts" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden;"></div>
 
-<script>
-  // YES button: show invitation with fade-in
-  document.getElementById("yes").addEventListener("click", function() {
-    const inv = document.getElementById("invitation");
-    inv.style.display = "block";
-    setTimeout(() => {
-      inv.style.opacity = 1;
-    }, 10); // fade-in
-    startHearts();
-  });
 
   // NO button: move randomly
   const noButton = document.getElementById("no");
