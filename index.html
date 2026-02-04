@@ -56,23 +56,12 @@
 </div>
 
 
-<!-- Hidden invitations -->
-<div id="invitation" style="text-align:center; margin-top:30px; display:none; opacity:0; transition: opacity 1s;">
-  <p>🎉 Here’s your special Valentine invitation! 🎉</p>
-  <div style="position:relative;">
-    <a href="1.png" target="_blank">
-      <img src="1.png" alt="Invitation 1" style="max-width:300px; margin:10px;">
-    </a>
-    <a href="2.png" target="_blank">
-      <img src="2.png" alt="Invitation 2" style="max-width:300px; margin:10px;">
-    </a>
-  </div>
-  <p>Click the images to open them full-size!</p>
-</div>
-
-<!-- Heart animation -->
-<div id="hearts" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden;"></div>
-
+<script>
+  // Show hidden invitations on YES click
+  document.getElementById("yes").addEventListener("click", function() {
+    const inv = document.getElementById("invitation");
+    if(inv) inv.style.display = "block";
+  });
 
   // Move NO button randomly on hover
   const noButton = document.getElementById("no");
@@ -82,6 +71,8 @@
     noButton.style.left = x + "px";
     noButton.style.top = y + "px";
   });
+</script>
+
 
       
 </script>
