@@ -70,15 +70,7 @@
     startHearts();
   });
 
-  // NO button: move randomly
-  const noButton = document.getElementById("no");
-  noButton.addEventListener("mouseenter", function() {
-    const x = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
-    const y = Math.floor(Math.random() * 100); // vertical range
-    noButton.style.left = x + "px";
-    noButton.style.top = y + "px";
-  });
-
+ 
   // Hearts animation
   function startHearts() {
     const heartsContainer = document.getElementById("hearts");
