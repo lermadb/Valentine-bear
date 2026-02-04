@@ -74,15 +74,15 @@
 <div id="hearts" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; overflow:hidden;"></div>
 
 
-  // NO button: move randomly
+  // Move NO button randomly on hover
   const noButton = document.getElementById("no");
   noButton.addEventListener("mouseenter", function() {
     const x = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
-    const y = Math.floor(Math.random() * 100); // vertical range
+    const y = Math.floor(Math.random() * 100);
     noButton.style.left = x + "px";
     noButton.style.top = y + "px";
   });
-
+</script>
   // Hearts animation
   function startHearts() {
     const heartsContainer = document.getElementById("hearts");
