@@ -179,8 +179,15 @@ body {
 }
 
 button {
-  background-color: pink;
-  color: white;
+  background-color:#ff4081;
+  color:white;
+  padding:10px 20px;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+<button style="background-color:red;">Yes</button>
+
 }
 
 /* ================= YES MODE ================= */
