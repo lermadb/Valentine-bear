@@ -178,13 +178,17 @@ body {
   cursor: pointer;
 }
 
-button {
-  background-color:#ff4081;
-  color:white;
-  padding:10px 20px;
-  border:none;
-  border-radius:5px;
-  cursor:pointer;
+<!-- Buttons with fixed color -->
+<div style="text-align:center; margin-top:20px;">
+  <button id="yes" style="background-color:#ff4081 !important; color:white !important; padding:10px 20px; border:none; border-radius:10px; font-size:18px; cursor:pointer;">
+    Yes
+  </button>
+
+  <button id="no" style="background-color:#ff4081 !important; color:white !important; padding:10px 20px; border:none; border-radius:10px; font-size:18px; cursor:pointer;">
+    Maybe Later
+  </button>
+</div>
+
 }
 <button style="background-color:red;">Yes</button>
 
