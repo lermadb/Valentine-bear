@@ -69,14 +69,23 @@
     startHearts();
   });
 
-  // NO button: move randomly
-  const noButton = document.getElementById("no");
+  
+  // NO button moves randomly and never disappears
+ const noButton = document.getElementById("no");
+
   noButton.addEventListener("mouseenter", function() {
-    const x = Math.floor(Math.random() * (window.innerWidth - noButton.offsetWidth));
-    const y = Math.floor(Math.random() * 100); // vertical range
+    const btnWidth = noButton.offsetWidth;
+    const btnHeight = noButton.offsetHeight;
+    const maxX = window.innerWidth - btnWidth - 20; // prevent going off-screen
+    const maxY = window.innerHeight - btnHeight - 20;
+
+    const x = Math.floor(Math.random() * maxX);
+    const y = Math.floor(Math.random() * maxY);
+
     noButton.style.left = x + "px";
     noButton.style.top = y + "px";
   });
+</script>
 
   // Hearts animation
   function startHearts() {
