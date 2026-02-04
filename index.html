@@ -56,23 +56,6 @@
 
 
 
-
-      const fall = () => {
-        let top = parseFloat(heart.style.top);
-        if(top < window.innerHeight){
-          heart.style.top = (top + 2 + Math.random()*2) + "px";
-          requestAnimationFrame(fall);
-        } else {
-          heartsContainer.removeChild(heart);
-        }
-      }
-      fall();
-    }
-  }
-</script>
-
-
-
   // Move NO button randomly on hover
   const noButton = document.getElementById("no");
   noButton.addEventListener("mouseenter", function() {
@@ -81,8 +64,8 @@
     noButton.style.left = x + "px";
     noButton.style.top = y + "px";
   });
-</script>
-<div style="text-align:center; margin-top:30px;">
+          
+<div id="invitation" style="text-align:center; margin-top:30px; display:none;">
   <p>🎉 Here’s your special Valentine invitation! 🎉</p>
   <a href="1.png" target="_blank">
     <img src="1.png" alt="Invitation 1" style="max-width:300px; margin:10px;">
@@ -97,6 +80,7 @@
     document.getElementById("invitation").style.display = "block";
   });
 </script>
+
 
 
 
