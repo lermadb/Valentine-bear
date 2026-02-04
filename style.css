@@ -178,10 +178,9 @@ body {
   cursor: pointer;
 }
 
-<button id="yes" style="background-color:#ff4081; color:white; padding:10px 20px; border:none; border-radius:5px;">Yes</button>
-
-<button id="no" style="background-color:#ff4081; color:white; padding:10px 20px; border:none; border-radius:5px;">Maybe Later</button>
-
+button {
+  background-color: pink;
+  color: white;
 }
 
 /* ================= YES MODE ================= */
